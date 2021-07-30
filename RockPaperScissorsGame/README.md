@@ -1,7 +1,8 @@
 ﻿This project is a simple Rock, Paper, Scissors game written in C#. The gist of
 the game is to beat the CPU to 3 total wins by selecting the rock, paper, or
-scissors options. You can play the game as many times as you want by selecting
-"y" to continue or "n" if you choose to exit the program.
+scissors options. Focused on assuring that the player can't input invalid choices
+using RequireValidEntry and ToUpper methods. You can play the game as many times
+ as you want by selecting"y" to continue or "n" if you choose to exit the program.
 
 The 3 features I added to this project:
 1. By using a while loop as my "master loop" where the user can repeatedly enter
