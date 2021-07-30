@@ -8,7 +8,8 @@ The 3 features I added to this project:
  commands/perform actions, including choosing to exit the program.
 
 2. I Implement a log that records errors, invalid inputs, or other important
-events and writes them to a text file by using a streamwriter method.
+events and writes them to a text file by using a streamwriter method. Currently
+the Logs.txt file is located in the bin in the project folder.
 
 3. I used a scoreboard like feature to have a visual representation of data--
 mainly scores for each game one whether player, cpu, or draw.
