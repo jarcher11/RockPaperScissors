@@ -13,5 +13,8 @@ events and writes them to a text file by using a streamwriter method. Currently
 the Logs.txt file is located in the bin in the project folder.
 
 3. I used a scoreboard like feature to have a visual representation of data--
-mainly scores for each game one whether player, cpu, or draw.
+mainly scores for each game one whether player, cpu, or draw. To use this feature,
+I installed a ConsoleTables library from Nuget packages. The table provides the
+scores of player, CPU, and counts the draws from each round. The table will add
+an additional row to each game you decided to play.
  

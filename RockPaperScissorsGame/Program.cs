@@ -1,7 +1,9 @@
 ﻿using System;
 using System.IO;
+using ConsoleTables;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Linq;
 
 
 namespace RockPaperScissorsGame
@@ -32,7 +34,6 @@ namespace RockPaperScissorsGame
         {
             var person = Gamekeeper.Parse("Gamekeeper");
             person.Introduce("Player");
-
             string inputPlayer = null, inputCPU;
             int randomInt;
             bool validEntry = false;
@@ -40,6 +41,8 @@ namespace RockPaperScissorsGame
             string paper = "Paper";
             string scissors = "Scissors";
             bool playAgain = true;
+            var table = new ConsoleTable("Player", "CPU", "Draws");
+
             while (playAgain) // The start of the Master Loop feature.
             {
                 int scorePlayer = 0;
@@ -74,7 +77,7 @@ namespace RockPaperScissorsGame
                             }
                             else if (inputPlayer == scissors.ToUpper())
                             {
-                                Console.WriteLine("CPU WINS!/n / n");
+                                Console.WriteLine("CPU WINS!\n\n");
                                 scoreCPU++;
                             }
                             break;
@@ -123,9 +126,9 @@ namespace RockPaperScissorsGame
                             }
                             break;
                     }
+
                     Console.WriteLine("\n\nSCORES:\tPlayer:\t{0}\tCPU:\t{1}\tDraws:\t{2}", scorePlayer, scoreCPU,
                         drawTimes);
-                    // Feature that provides a visual representation of data like a scoreboard for the user to see. 
                 }
                 if (scorePlayer == 3)
                 {
@@ -145,7 +148,11 @@ namespace RockPaperScissorsGame
                 {
                     playAgain = false;
                 }
-                
+
+                table.AddRow(scorePlayer, scoreCPU, drawTimes);
+
+                table.Write();
+                // Feature that provides a visual representation of data like a scoreboard for the user to see.
             }
             bool RequireValidEntry()
             {
@@ -162,9 +169,9 @@ namespace RockPaperScissorsGame
                 return false;
             }
 
-
         }
     } 
 }
+
 
 
